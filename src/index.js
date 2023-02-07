@@ -20,7 +20,6 @@ mobileMenu.addEventListener('click', () => {
   header.classList.toggle('header_mobile-active');
 });
 
-
 // sliders
 new Swiper('#cardsSwiper', {
   slidesPerView: 4,
@@ -64,8 +63,8 @@ new Swiper('#featuresSwiper', {
 const GEO_MARKERS = {
   default: [51.505, -0.09],
   shop: [51.495, -0.09],
-  medicine: [51.505, -0.14]
-}
+  medicine: [51.505, -0.14],
+};
 const map = L.map('map').setView(GEO_MARKERS['default'], 13);
 
 const defaultMarker = L.icon({ iconUrl: geoMarker });
@@ -74,14 +73,12 @@ const medicineMarker = L.icon({ iconUrl: geoMedicine });
 
 const markers = document.querySelectorAll('.map__sticker');
 
-[...markers].map(item => (
-  item.addEventListener('click', function() {
+[...markers].map((item) =>
+  item.addEventListener('click', function () {
     map.flyTo(GEO_MARKERS[this.dataset.type]);
   })
-));
+);
 
 L.marker(GEO_MARKERS['default'], { icon: defaultMarker }).addTo(map);
 L.marker(GEO_MARKERS['shop'], { icon: shopMarker }).addTo(map);
 L.marker(GEO_MARKERS['medicine'], { icon: medicineMarker }).addTo(map);
-
-
