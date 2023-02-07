@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "leaflet": "^1.9.3",
     "swiper": "^9.0.3"
   },
   "browserslist": [
