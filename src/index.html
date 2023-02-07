@@ -244,7 +244,7 @@
   </section>
 
   <section class="map">
-    <h3 class="map__title">Наша инфраструктура</h3>
+    <h3 class="title">Наша инфраструктура</h3>
 
     <div class="map__content">
       <div id="map"></div>
@@ -252,26 +252,146 @@
       <div class="map__control">
         <div data-type="default" class="map__sticker sticker">
           <div class="sticker__content">
-            <img class="map__image" src="static/images/geo.svg" />
+            <img loading="lazy" class="map__image" src="static/images/geo.svg" />
             <span class="map__marker">ЖК “Яблоновский”</span>
           </div>
         </div>
 
         <div data-type="shop" class="map__sticker sticker">
           <div class="sticker__content">
-            <img class="map__image" src="static/images/geo-shop.svg" />
+            <img loading="lazy" class="map__image" src="static/images/geo-shop.svg" />
             <span class="map__marker">Магазины</span>
           </div>
         </div>
 
         <div data-type="medicine" class="map__sticker sticker">
           <div class="sticker__content">
-            <img class="map__image" src="static/images/geo-medicine.svg" />
+            <img loading="lazy" class="map__image" src="static/images/geo-medicine.svg" />
             <span class="map__marker">Поликлинника</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="benefits container">
+    <h3 class="benefits__title title">Описание Жилого Комплекса</h3>
+
+    <div class="benefits__hint">Нажимайте < > чтобы подробно ознакомится с проектом</div>
+
+    <div class="benefits__lists">
+      <div data-index="0" class="benefits__sticker benefits__sticker_active sticker">
+        <div class="sticker__content">
+          <span class="benefits__text">Поликлинника</span>
+        </div>
+      </div>
+
+      <div data-index="1" class="benefits__sticker sticker">
+        <div class="sticker__content">
+          <span class="benefits__text">Архитектура</span>
+        </div>
+      </div>
+
+      <div data-index="2" class="benefits__sticker sticker">
+        <div class="sticker__content">
+          <span class="benefits__text">Охрана</span>
+        </div>
+      </div>
+
+      <div data-index="3" class="benefits__sticker sticker">
+        <div class="sticker__content">
+          <span class="benefits__text">Территория</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="benefitsSwiper" class="introduce__cards swiper">
+      <div class="swiper-wrapper">
+        <div class="benefits__gallery gallery swiper-slide">
+          <div class="gallery__main">
+            <img loading="lazy" src="static/images/gallery-1.png" />
+            <div class="gallery__info">
+              <h4 class="gallery__title">Поликлинника</h4>
+              <p class="gallery__text">
+                Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт. Яблоновский. За пять минут пешком можно дойти до муниципальной поликлиники, школы и детского садика.
+              </p>
+              <p class="gallery__text">
+                Этот жилой комплекс располагается в непосредственной близости от улицы Гагарина, где проходит абсолютное большинство маршрутов общественного транспорта, соответственно легко добраться во все части поселка и города Краснодар. Тут же располагается магазин «Магнит», «Магнит Косметик», МФЦ, овощной рынок, мебельные магазины, аптеки и другие предприятия сферы услуг.
+              </p>
+            </div>
+          </div>
+          <div class="gallery__control">
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-2.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-3.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-4.png" />
+          </div>
+        </div>
+
+        <div class="benefits__gallery gallery swiper-slide">
+          <div class="gallery__main">
+            <img loading="lazy" src="static/images/gallery-1.png" />
+            <div class="gallery__info">
+              <h4 class="gallery__title">Архитектура</h4>
+              <p class="gallery__text">
+                Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт. Яблоновский. За пять минут пешком можно дойти до муниципальной поликлиники, школы и детского садика.
+              </p>
+              <p class="gallery__text">
+                Этот жилой комплекс располагается в непосредственной близости от улицы Гагарина, где проходит абсолютное большинство маршрутов общественного транспорта, соответственно легко добраться во все части поселка и города Краснодар. Тут же располагается магазин «Магнит», «Магнит Косметик», МФЦ, овощной рынок, мебельные магазины, аптеки и другие предприятия сферы услуг.
+              </p>
+            </div>
+          </div>
+          <div class="gallery__control">
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-2.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-3.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-4.png" />
+          </div>
+        </div>
+
+        <div class="benefits__gallery gallery swiper-slide">
+          <div class="gallery__main">
+            <img loading="lazy" src="static/images/gallery-1.png" />
+            <div class="gallery__info">
+              <h4 class="gallery__title">Охрана</h4>
+              <p class="gallery__text">
+                Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт. Яблоновский. За пять минут пешком можно дойти до муниципальной поликлиники, школы и детского садика.
+              </p>
+              <p class="gallery__text">
+                Этот жилой комплекс располагается в непосредственной близости от улицы Гагарина, где проходит абсолютное большинство маршрутов общественного транспорта, соответственно легко добраться во все части поселка и города Краснодар. Тут же располагается магазин «Магнит», «Магнит Косметик», МФЦ, овощной рынок, мебельные магазины, аптеки и другие предприятия сферы услуг.
+              </p>
+            </div>
+          </div>
+          <div class="gallery__control">
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-2.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-3.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-4.png" />
+          </div>
+        </div>
+
+        <div class="benefits__gallery gallery swiper-slide">
+          <div class="gallery__main">
+            <img loading="lazy" src="static/images/gallery-1.png" />
+            <div class="gallery__info">
+              <h4 class="gallery__title">Территория</h4>
+              <p class="gallery__text">
+                Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт. Яблоновский. За пять минут пешком можно дойти до муниципальной поликлиники, школы и детского садика.
+              </p>
+              <p class="gallery__text">
+                Этот жилой комплекс располагается в непосредственной близости от улицы Гагарина, где проходит абсолютное большинство маршрутов общественного транспорта, соответственно легко добраться во все части поселка и города Краснодар. Тут же располагается магазин «Магнит», «Магнит Косметик», МФЦ, овощной рынок, мебельные магазины, аптеки и другие предприятия сферы услуг.
+              </p>
+            </div>
+          </div>
+          <div class="gallery__control">
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-2.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-3.png" />
+            <img loading="lazy" class="gallery__secondary" src="static/images/gallery-4.png" />
+          </div>
+        </div>
+      </div>
+    </div> 
+  </section>
+
+  <footer class="footer">
+    
+  </footer>
 </body>
 </html>

@@ -59,6 +59,32 @@ new Swiper('#featuresSwiper', {
   },
 });
 
+const benefitsSwiperButtons = [
+  ...document.querySelectorAll('.benefits__sticker'),
+];
+const benefitsSwiper = new Swiper('#benefitsSwiper', { slidesPerView: 1 });
+
+benefitsSwiperButtons.map((item) =>
+  item.addEventListener('click', function () {
+    benefitsSwiperButtons.forEach((button) =>
+      button.classList.remove('benefits__sticker_active')
+    );
+    this.classList.add('benefits__sticker_active');
+
+    benefitsSwiper.slideTo(this.dataset.index);
+  })
+);
+
+benefitsSwiper.on('slideChange', function (event) {
+  benefitsSwiperButtons.forEach((button) => {
+    if (Number(button.dataset.index) === event.activeIndex) {
+      button.classList.add('benefits__sticker_active');
+    } else {
+      button.classList.remove('benefits__sticker_active');
+    }
+  });
+});
+
 // map
 const GEO_MARKERS = {
   default: [51.505, -0.09],
