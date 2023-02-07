@@ -1,1 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+:root {
+  --accent: #31BEF4;
+  --main: #212d55;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Raleway', sans-serif; font-size: 16px; color: var(--fonts) }
+
+.container { max-width: 1155px; margin: 0 auto; padding-left: 15px; padding-right: 15px; }
+
+.header { position: fixed; width: 100%; padding-top: 12px; padding-bottom: 12px;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.7));
+}
+.header__content { display: flex; align-items: center; justify-content: space-between; }
+.header__logo { display: block; background-image: url(../static/images/logo.png); background-repeat: no-repeat; background-position: center;
+  background-size: cover; object-fit: contain; width: 200px; height: 95px;
+}
+.header__phone { text-align: center; }
+.header__phone-number,
+.header__phone-link { display: block; color: var(--main); }
+.header__phone-number { font-size: 1.25rem; padding-bottom: 5px; }
+.header__phone-link { font-size: 1.12rem; }
+.header__menu { display: none; cursor: pointer; transition: 0.4s; padding: 8px; border-radius: 50%; }
+.header__menu-bar1,
+.header__menu-bar2,
+.header__menu-bar3 { width: 30px; height: 2.5px; background-color: var(--main); margin: 6px 0; transition: 0.4s; }
+.header__menu_changed { background-color: white; }
+.header__menu_changed .header__menu-bar1 { transform: translate(0, 9px) rotate(-45deg); background-color: var(--accent); }
+.header__menu_changed .header__menu-bar2 { opacity: 0; }
+.header__menu_changed .header__menu-bar3 { transform: translate(0, -8px) rotate(45deg); background-color: var(--accent); }
+
+.navigation { overflow: hidden; font-size: 1.12rem; display: flex; justify-content: space-around; width: 80%; }
+.navigation__link,
+.navigation__button { font-family: 'Raleway', sans-serif; font-size: 1.12rem; color: var(--main); padding: 14px 16px; }
+.navigation__link { float: left; text-align: center; text-decoration: none; }
+.navigation__button { border: none; outline: none; background-color: inherit; margin: 0; }
+.navigation__subnav { float: left; }
+.navigation__link:hover,
+.navigation__subnav:hover .navigation__button { color: var(--accent); }
+.navigation__subnav-content { display: none; position: absolute; padding-top: 35px; left: 0; width: 100%; z-index: 1; }
+.navigation__subnav-wrapper { border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); padding: 30px 0;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
+}
+.navigation__subnav-content .navigation__link { float: none; text-decoration: none; }
+.navigation__subnav:hover .navigation__subnav-content { display: block; }
+.navigation__icon { display: none; }
+
+.icon { width: 11px; height: 11px; background-repeat: no-repeat; background-size: cover; background-position: center; }
+.icon__arrow { background-image: url(../static/images/arrow-down.svg); }
+
+.introduce { background-image: url(../static/images/background.png); background-position: center; background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 811px; 
+}
+
+@media (max-width: 1024px) {
+  .header__phone-number,
+  .header__phone-link { font-size: 1rem; }
+
+  .navigation__link,
+  .navigation__button { font-size: 1rem; padding: 14px 7px; }
+}
+
+@media (max-width: 780px) {
+  .header_mobile-active { min-height: 100%; transition: 0.2s ease-in-out; background-color: var(--main); z-index: 5; background-image: none;
+    overflow: auto;
+  }
+  .header__phone { display: none; }
+  .header__menu { display: inline-block; }
+  .header__navigation { position: absolute; transition: 0.2s; top: 0; left: 0; bottom: 0; right: 0; background-color: var(--main); transform: translateY(115px);
+    height: 0;
+  }
+  .header__logo { background-image: url(../static/images/mobile-logo.png); }
+  .header_mobile-active .header__logo { background-image: url(../static/images/mobile-logo-active.png); }
+  .header_mobile-active .header__navigation { height: 100%; }
+
+  .header_mobile-active .header__phone { display: block; text-align: right; }
+  .header_mobile-active .header__phone-number,
+  .header_mobile-active .header__phone-link { color: white; font-size: 1.25rem; }
+
+  .navigation { display: flex; flex-direction: column; padding: 0 15px; overflow: hidden; justify-content: flex-start; gap: 10px; overflow: auto; width: 100%; }
+  .navigation__icon { display: inline-block; }
+  .navigation__link,
+  .navigation__button { color: white; width: 100%; text-align: right; font-size: 1.12rem; }
+  .navigation__subnav-content { position: static; padding: 0; }
+  .navigation__subnav-wrapper { background-image: none; border: none; padding: 0; }
+  .navigation__link { display: block; }
+}
