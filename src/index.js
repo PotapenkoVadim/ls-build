@@ -64,7 +64,7 @@ const benefitsSwiperButtons = [
 ];
 const benefitsSwiper = new Swiper('#benefitsSwiper', { slidesPerView: 1 });
 
-benefitsSwiperButtons.map((item) =>
+benefitsSwiperButtons.forEach((item) =>
   item.addEventListener('click', function () {
     benefitsSwiperButtons.forEach((button) =>
       button.classList.remove('benefits__sticker_active')
@@ -99,7 +99,7 @@ const medicineMarker = L.icon({ iconUrl: geoMedicine });
 
 const markers = document.querySelectorAll('.map__sticker');
 
-[...markers].map((item) =>
+[...markers].forEach((item) =>
   item.addEventListener('click', function () {
     map.flyTo(GEO_MARKERS[this.dataset.type]);
   })
@@ -108,3 +108,16 @@ const markers = document.querySelectorAll('.map__sticker');
 L.marker(GEO_MARKERS['default'], { icon: defaultMarker }).addTo(map);
 L.marker(GEO_MARKERS['shop'], { icon: shopMarker }).addTo(map);
 L.marker(GEO_MARKERS['medicine'], { icon: medicineMarker }).addTo(map);
+
+// form
+const fields = [...document.querySelectorAll('.form__field')];
+
+fields.forEach((item) =>
+  item.addEventListener('input', function () {
+    if (this.value) {
+      this.classList.add('form__field_valuable');
+    } else {
+      this.classList.remove('form__field_valuable');
+    }
+  })
+);
