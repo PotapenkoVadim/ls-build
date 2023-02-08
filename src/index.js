@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper, { Pagination } from 'swiper';
 import L from 'leaflet';
 
 import 'swiper/css';
@@ -21,6 +21,8 @@ mobileMenu.addEventListener('click', () => {
 });
 
 // sliders
+Swiper.use([Pagination]);
+
 new Swiper('#cardsSwiper', {
   slidesPerView: 4,
   spaceBetween: 70,
@@ -43,14 +45,26 @@ new Swiper('#cardsSwiper', {
 new Swiper('#featuresSwiper', {
   slidesPerView: 4,
   spaceBetween: 10,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
   breakpoints: {
     320: {
       slidesPerView: 1,
       spaceBetween: 40,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
     },
     780: {
       slidesPerView: 1,
       spaceBetween: 40,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
     },
     1024: {
       slidesPerView: 4,
@@ -63,6 +77,14 @@ const benefitsSwiperButtons = [
   ...document.querySelectorAll('.benefits__sticker'),
 ];
 const benefitsSwiper = new Swiper('#benefitsSwiper', { slidesPerView: 1 });
+
+document.addEventListener('keydown', function (event) {
+  if (['ArrowLeft', '<'].includes(event.key)) {
+    benefitsSwiper.slidePrev();
+  } else if (['ArrowRight', '>'].includes(event.key)) {
+    benefitsSwiper.slideNext();
+  }
+});
 
 benefitsSwiperButtons.forEach((item) =>
   item.addEventListener('click', function () {

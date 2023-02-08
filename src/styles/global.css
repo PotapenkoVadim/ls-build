@@ -125,7 +125,7 @@ body { font-family: 'Raleway', sans-serif; font-size: 16px; color: var(--main) }
 .map__image { width: 50px; height: 50px; }
 .map__marker { font-size: 1.35rem; font-weight: 600; }
 
-.leaflet-control-zoom { display: none; }
+.leaflet-control { display: none; }
 
 .sticker { background-color: var(--light); box-shadow: 0px 5px 15px rgba(33, 45, 85, 0.2); border-radius: 10px; padding: 15px;
   margin-bottom: 15px; cursor: pointer;
@@ -195,6 +195,13 @@ body { font-family: 'Raleway', sans-serif; font-size: 16px; color: var(--main) }
 
 .text-marked { color: var(--accent); text-decoration: none; }
 
+.swiper-pagination { display: none; align-items: center; justify-content: center; gap: 13px; padding: 10px 0; }
+.swiper-pagination-bullet { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--accent); }
+.swiper-pagination-bullet-active { background-color: var(--accent); box-shadow: 0px 3px 15px #31BEF4; position: relative; }
+.swiper-pagination-bullet-active::after { content: ''; position: absolute; top: 50%; left: 50%; width: 20px; height: 20px; border: 1px solid var(--accent);
+  border-radius: 50%; transform: translate(-50%, -50%);
+}
+
 @media (max-width: 1024px) {
   .header__phone-number,
   .header__phone-link { font-size: 1rem; }
@@ -215,6 +222,8 @@ body { font-family: 'Raleway', sans-serif; font-size: 16px; color: var(--main) }
   .form__control, .form__button { display: block; width: 100%; }
   .footer__form-container { flex-direction: column; gap: 25px; }
   .footer__description, .footer__phone-number { font-size: 1.2rem; }
+
+  .swiper-pagination { display: flex; }
 }
 
 @media (max-width: 780px) {
@@ -262,6 +271,7 @@ body { font-family: 'Raleway', sans-serif; font-size: 16px; color: var(--main) }
   .footer__text { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); }
   .footer__left-row { border-right: none; border-bottom: 1px dashed var(--accent); margin-bottom: 25px; }
   .footer__right-row { padding: 0; }
+  .footer__title { font-size: 1.75rem; }
 
   .form__checkbox { text-align: center; padding: 10px 0; }
 }
